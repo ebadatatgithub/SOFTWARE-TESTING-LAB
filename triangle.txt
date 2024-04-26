@@ -16,6 +16,12 @@ public class IsoscelesTriangle {
 
             // Move to the next line
             System.out.println();
+
+// change check Move to the next line
+            System.out.println();
+
+// change check
+            System.out.println();
         }
     }
 }
