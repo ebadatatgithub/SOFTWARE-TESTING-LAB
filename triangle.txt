@@ -1,18 +1,35 @@
 public class IsoscelesTriangle {
+    public static boolean isIsosceles(int a, int b, int c) {
+        if (a == b || b == c || a == c) { // Check if any two sides are equal
+            if (a != b || b != c || a != c) { // Check if not all three sides are equal (to avoid equilateral triangle)
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean anglesAreEqual(int a, int b, int c) {
+        return (a == b) || (b == c) || (a == c); // Check if any two angles are equal
+    }
+
     public static void main(String[] args) {
-        int size = 5; // Change this value to adjust the size of the triangle
+        int side1 = 5;
+        int side2 = 7;
+        int side3 = 5;
 
-        // Loop to iterate through rows
-        for (int i = 1; i <= size; i++) {
-            // Loop to print spaces before the stars
-            for (int j = 1; j <= size - i; j++) {
-                System.out.print(" ");
+        if (isIsosceles(side1, side2, side3)) {
+            System.out.println("The triangle is isosceles.");
+            if (anglesAreEqual(side1, side2, side3)) {
+                System.out.println("The angles opposite the equal sides are equal.");
+            } else {
+                System.out.println("The angles opposite the equal sides are not equal.");
             }
+        } else {
+            System.out.println("The triangle is not isosceles.");
+        }
+    }
+}
 
-            // Loop to print stars
-            for (int k = 1; k <= 2 * i - 1; k++) {
-                System.out.print("*");
-            }
 
             // Move to the next line
             System.out.println();
